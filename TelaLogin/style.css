@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: cornflowerblue;
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    /* evita que o container encoste nas bordas em telas pequenas */
+}
+
+.container {
+    width: 420px;
+    max-width: 100%;
+    /* garante que não ultrapasse a tela */
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 10px;
+    color: #fff;
+    padding: 30px 40px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    backdrop-filter: blur(50px);
+}
+
+.container h1 {
+    font-size: clamp(1.8rem, 5vw, 2.2rem);
+    /* título fluido */
+    text-align: center;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 15px;
+    outline: none;
+    font-size: 16px;
+    color: #040404;
+    padding: 20px 45px 20px 20px;
+}
+
+.input-box input::placeholder {
+    color: #999191;
+}
+
+.input-box i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    color: #170404;
+}
+
+.remember-forget {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /* permite quebrar em telas pequenas */
+    gap: 10px;
+    margin: -15px 0 15px;
+    font-size: 0.9rem;
+}
+
+.remember-forget label input {
+    accent-color: #fff;
+    margin-right: 5px;
+}
+
+.remember-forget a {
+    text-decoration: none;
+    color: #0f0f0f;
+}
+
+.remember-forget a:hover {
+    text-decoration: underline;
+}
+
+.login {
+    width: 100%;
+    height: 50px;
+    background-color: #66e82a;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #090909;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    margin-top: 20px;
+}
+
+.login:hover {
+    background-color: transparent;
+    border: 2px solid #66e82a;
+    color: #090909;
+    transition: 0.5s;
+}
+
+.register-link {
+    font-size: 15px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+
+.register-link a {
+    text-decoration: none;
+    color: #0f0f0f;
+    font-weight: 600;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+/* 📱 Responsividade */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        /* ocupa quase toda a largura */
+        padding: 20px;
+    }
+
+    .container h1 {
+        font-size: 1.8rem;
+    }
+
+    .input-box {
+        margin: 20px 0;
+    }
+
+    .login {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .container h1 {
+        font-size: 1.5rem;
+    }
+
+    .input-box input {
+        font-size: 14px;
+        padding: 15px 40px 15px 15px;
+    }
+
+    .remember-forget {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .login {
+        height: 45px;
+        font-size: 14px;
+    }
+
+    .register-link {
+        font-size: 14px;
+    }
+}

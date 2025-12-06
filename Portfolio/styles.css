@@ -1,0 +1,492 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+:root {
+    --primaria: #4f46e5;
+    --secundaria: #7c3aed;
+    --escuro: #0f172a;
+    --maisEscuro: #0a0f1c;
+    /* usado como fundo principal */
+    --claro: #e2e8f0;
+    --vidro: rgba(255, 255, 255, 0.1);
+}
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: var(--maisEscuro);
+    /* fundo escuro aplicado */
+    color: var(--claro);
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Navegação */
+.navegacao {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--primaria);
+    padding: 10px 20px;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Menu padrão (desktop) */
+.menu {
+    display: flex;
+    list-style: none;
+}
+
+.menu li {
+    margin: 0 15px;
+}
+
+.menu-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Botão hamburguer */
+.hamburguer {
+    display: none;
+    /* escondido no desktop */
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .hamburguer {
+        display: block;
+        /* aparece no mobile */
+    }
+
+    .menu {
+        display: none;
+        /* escondido por padrão */
+        flex-direction: column;
+        background: var(--escuro);
+        position: absolute;
+        top: 60px;
+        /* abaixo do header */
+        left: 0;
+        width: 100%;
+        padding: 20px 0;
+
+    }
+
+    .menu li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .menu.show {
+        display: flex;
+        /* aparece quando clicado */
+    }
+}
+
+
+/* Espaço extra no topo do conteúdo para não ficar escondido atrás do header */
+body {
+    padding-top: 70px;
+    /* ajuste conforme a altura do header */
+}
+
+
+/* Cabeçalho */
+.cabecalho {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.foto-perfil {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    /* mantém formato circular */
+    object-fit: cover;
+    /* preenche o círculo */
+    object-position: center 20%;
+    /* move a imagem um pouco para baixo */
+    margin-bottom: 15px;
+    border: 6px solid var(--primaria);
+}
+
+
+.cabecalho-sub-titulo {
+    font-size: 1.1rem;
+    color: var(--secundaria);
+}
+
+.linkedin-icon {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-left: 15px;
+    transition: color 0.3s ease;
+}
+
+.linkedin-icon:hover {
+    color: #0A66C2;
+    /* azul oficial do LinkedIn */
+}
+
+html {
+  scroll-behavior: smooth; /* ativa rolagem suave */
+}
+
+
+/* SOBRE MIM */
+.sobre {
+    padding: 40px 20px;
+    background: var(--escuro);
+    /* fundo escuro para contraste */
+    border-radius: 12px;
+    /* cantos arredondados */
+    margin: 40px auto;
+    /* centraliza a caixa na página */
+    max-width: 900px;
+    /* largura máxima */
+    text-align: center;
+    /* centraliza todo o conteúdo */
+    box-shadow: 0 6px 12px var(--vidro);
+}
+
+.sobre-titulo {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--primaria);
+}
+
+.sobre-caixa {
+    padding: 20px;
+}
+
+.sobre-paragrafo {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--claro);
+    text-align: center;
+    /* centraliza o texto */
+    border: 1px solid var(--secundaria);
+    /* mantém borda apenas no texto */
+    border-radius: 8px;
+    padding: 20px;
+    background: var(--maisEscuro);
+    /* fundo interno */
+    display: inline-block;
+    /* mantém centralizado */
+}
+
+/* Meus Projectos */
+.container-cards {
+    padding: 40px 20px;
+    background: var(--escuro);
+    /* fundo escuro */
+    border-radius: 12px;
+    /* cantos arredondados */
+    margin: 40px auto;
+    /* centraliza na página */
+    max-width: 1100px;
+    /* largura máxima */
+    text-align: center;
+    /* centraliza conteúdo */
+    box-shadow: 0 6px 12px var(--vidro);
+}
+
+.secao-titulo {
+    font-size: 2rem;
+    margin-bottom: 24px;
+    color: var(--primaria);
+}
+
+/* Wrapper dos cards */
+.wrapper-cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* permite quebrar em telas menores */
+}
+
+/* Card */
+.card {
+    display: flex;
+    flex-direction: column;
+    /* organiza conteúdo em coluna */
+    justify-content: space-between;
+    /* distribui espaço entre conteúdo e botão */
+    background: var(--maisEscuro);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--vidro);
+    color: var(--claro);
+    width: 18rem;
+    min-height: 350px;
+    /* altura mínima para uniformizar */
+}
+
+/* Imagem */
+.card-img-top {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* Corpo do card */
+.card-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    /* ocupa espaço disponível */
+    justify-content: space-between;
+    /* garante espaçamento uniforme */
+    padding: 15px;
+}
+
+/* Botão */
+.card-body .btn {
+    align-self: flex-end;
+    /* alinha à direita */
+    margin-top: auto;
+    /* empurra para o final */
+    padding: 12px 20px;
+    font-size: 1rem;
+    background: var(--secundaria);
+    color: #fff;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.card-body .btn:hover {
+    background: var(--primaria);
+}
+
+/* Remove sublinhados dos links */
+a {
+    text-decoration: none;
+}
+
+/* Mantém estilo dos links do menu */
+.menu-link {
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.menu-link:hover {
+    color: var(--secundaria);
+    text-decoration: none;
+    /* garante que não volte o sublinhado no hover */
+}
+
+/* Links dos botões dos cards */
+.card-body .btn {
+    text-decoration: none;
+    /* remove sublinhado dos botões */
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .wrapper-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+        /* ocupa quase toda a largura em tablets/celulares */
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        min-height: auto;
+        /* remove altura fixa em telas muito pequenas */
+    }
+
+    .card-body .btn {
+        width: 100%;
+        /* botão ocupa toda a largura no mobile */
+        align-self: center;
+    }
+}
+
+
+/* Contactos */
+.contactos {
+    padding: 50px 20px;
+    background: var(--escuro);
+    border-radius: 12px;
+    margin: 40px auto;
+    max-width: 900px;
+    text-align: center;
+    box-shadow: 0 6px 12px var(--vidro);
+}
+
+.contactos-titulo {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: var(--primaria);
+}
+
+/* Formulário */
+.formulario-contacto {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* espaçamento uniforme entre campos */
+}
+
+.grupo-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.campo-form {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid var(--claro);
+    border-radius: 8px;
+    background: var(--maisEscuro);
+    color: var(--claro);
+    font-size: 1rem;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.campo-form:focus {
+    border: 1px solid var(--primaria);
+    box-shadow: 0 0 8px var(--primaria);
+    outline: none;
+}
+
+/* Botão */
+.botao-form {
+    padding: 14px;
+    background: var(--secundaria);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.botao-form:hover {
+    background: var(--primaria);
+    transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .contactos {
+        margin: 20px;
+        padding: 30px 15px;
+    }
+
+    .contactos-titulo {
+        font-size: 1.6rem;
+    }
+
+    .campo-form,
+    .botao-form {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contactos-titulo {
+        font-size: 1.4rem;
+    }
+
+    .formulario-contacto {
+        gap: 15px;
+    }
+
+    .botao-form {
+        width: 100%;
+        /* botão ocupa toda a largura no mobile */
+    }
+}
+
+.rodape {
+    background: var(--escuro);
+    color: var(--claro);
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    border-top: 1px solid var(--vidro);
+}
+
+.rodape p {
+    margin: 0;
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu li {
+        margin: 10px 0;
+    }
+
+    .foto-perfil {
+        width: 120px;
+        height: 120px;
+    }
+
+    .wrapper-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .cabecalho h1 {
+        font-size: 1.5rem;
+    }
+
+    .cabecalho-sub-titulo {
+        font-size: 1rem;
+    }
+
+    .sobre-titulo,
+    .contactos-titulo {
+        font-size: 1.5rem;
+    }
+}

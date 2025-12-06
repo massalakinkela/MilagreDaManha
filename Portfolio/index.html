@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel="stylesheet" href="styles.css">
+    <title>Massala Kinkela | Portfólio</title>
+</head>
+
+<body>
+    <div class="particula">
+    </div>
+    <nav class="navegacao">
+        <div class="nav-container">
+            <span class="logo">Dev Massala Kinkela</span>
+            <button class="hamburguer" id="hamburguer">&#9776;</button>
+            <ul class="menu" id="menu">
+                <li><a href="#inicio" class="menu-link">Início</a></li>
+                <li><a href="#sobre" class="menu-link">Sobre</a></li>
+                <li><a href="#container-cards" class="menu-link">Projectos</a></li>
+                <li><a href="#contactos" class="menu-link">Contactos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <main id="inicio" class="cabecalho">
+        <img src="./img/massala2.jpg" alt="Massala Kinkela" class="foto-perfil">
+        <h1>Massala Kinkela</h1>
+        <p class="cabecalho-sub-titulo">Desenvolvedor Front-End Jr</p>
+        <li>
+            <a href="http://www.linkedin.com/in/massalapedrokinkela" target="_blank" class="linkedin-icon"
+                aria-label="LinkedIn">
+                <!-- Ícone SVG do LinkedIn -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" fill="#fff" viewBox="0 0 16 16">
+                    <path d="M0 1.146C0 .513.324 0 .725 0h14.55c.401 0 .725.513.725 1.146v13.708c0 .633-.324 1.146-.725 
+    1.146H.725A.723.723 0 0 1 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.21c.837 
+    0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.358.539-1.358 
+    1.248 0 .694.52 1.248 1.327 1.248h.015zm4.908 8.21h2.4V9.359c0-.216.016-.432.08-.586.176-.432.577-.88 
+    1.25-.88.881 0 1.233.664 1.233 1.637v4.864h2.4V9.25c0-2.22-1.184-3.252-2.764-3.252-1.28 
+    0-1.845.709-2.165 1.2h.016v-1.03h-2.4c.031.664 0 7.225 0 7.225z" />
+                </svg>
+            </a>
+        </li>
+    </main>
+
+    <!-- SESSÃO - SOBRE MIM -->
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre Mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">
+                Desenvolvedor Front-End com foco em aplicar minhas habilidades em desenvolvimento na criação de
+                interfaces modernas, responsivas e funcionais,
+                contribuindo em projetos que valorizem experiência do usuário e boas práticas de programação.
+            </p>
+        </div>
+    </section>
+
+    <!-- SESSÃO - PROJECTOS -->
+    <section id="container-cards" class="container-cards">
+        <h2 class="secao-titulo">Meus Projectos</h2>
+        <div class="wrapper-cards">
+
+            <div class="card" style="width: 18rem;">
+                <img src="../Conversor/imagens/logo.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <div>
+                        <h3 class="card-title">Consulte e converta moedas em segundos</h3>
+                        <p class="card-text">Este site permite consultar taxas de câmbio em tempo real, facilitando a
+                            conversão de moedas de forma rápida e prática.</p>
+                    </div>
+                    <a href="../Conversor/index.html" class="btn btn-primary">Saiba mais</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="../Microsoft/imagens/2_notebook.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <div>
+                        <h3 class="card-title">Site da Microsoft</h3>
+                        <p class="card-text">Recriação do site oficial da Microsoft como exercício de prática em
+                            front‑end.</p>
+                    </div>
+                    <a href="../Microsoft/index.html" class="btn btn-primary">Saiba mais</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="../TelaLogin/imagens/img.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <div>
+                        <h3 class="card-title">Tela de Login</h3>
+                        <p class="card-text">Projecto de criação de tela de login. Desenvolvida para praticar design
+                            moderno em front‑end.</p>
+                    </div>
+                    <a href="../TelaLogin/index.html" class="btn btn-primary">Saiba mais</a>
+                </div>
+            </div>
+
+
+
+        </div>
+    </section>
+
+    <section id="contactos" class="contactos">
+        <h2 class="contactos-titulo">Entre em Contacto</h2>
+        <form class="formulario-contacto" id="formulario" onsubmit="enviarWhatsApp(event)">
+            <div class="grupo-form">
+                <input placeholder="Nome" class="campo-form" id="nome">
+            </div>
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digite sua Mensagem" rows="6" id="msg"></textarea>
+            </div>
+
+            <button type="submit" class="botao-form">Enviar WhatsApp</button>
+        </form>
+
+        </div>
+        <footer class="rodape">
+            <p>&copy; 2025 Massala Kinkela. Todos os direitos reservados.</p>
+        </footer>
+
+    </section>
+
+    <script>
+        function enviarWhatsApp(event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('nome').value;
+            const msg = document.getElementById('msg').value;
+            const telefone = '244942416038';
+
+            const texto = `Olá! Me chamo ${nome}, ${msg}`;
+            const msgFormatada = encodeURIComponent(texto);
+
+            const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
+
+            console.log(url);
+
+            window.open(url, '_blank');
+        }
+
+        const hamburguer = document.getElementById('hamburguer');
+        const menu = document.getElementById('menu');
+
+        hamburguer.addEventListener('click', () => {
+            menu.classList.toggle('show');
+        });
+
+        document.querySelectorAll('.menu-link').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault(); // evita navegação imediata
+                const destino = this.getAttribute('href'); // pega o id da seção
+                setTimeout(() => {
+                    document.querySelector(destino).scrollIntoView({ behavior: 'smooth' });
+                }, 100); // atraso de 400ms
+            });
+        });
+
+
+
+    </script>
+
+</body>
+
+</html>

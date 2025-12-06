@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">    
+    <title>Conversor de Moeda</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Conversor de Moedas</h1>
+
+        <form class="converter-form" id="converterForm">
+
+            <div class="currency-row">
+
+                <div class="currency-input">
+                    <label for="amount">Valor</label>
+                    <input type="number" id="amount" placeholder="Digite o valor" step="0.1" min="0" required>
+                </div>
+
+                <div class="currency-select">
+                    <label for="fromCurrency">De</label>
+                    <select name="" id="fromCurrency" required>
+                        <option value="USD">USD - Dólar</option>
+                        <option value="EUR">EUR - Euro</option>
+                        <option value="BRL" selected>BRL - Real</option>
+                        <option value="GBP">GBP - Libra</option>
+                        <option value="AOA">AOA - Kwanza</option>
+                        <option value="JPY">JPY - Iene</option>
+                        <option value="CAD">CAD - Dólar Canadense</option>
+                        <option value="AUD">AUD - Dólar Australiano</option>
+                        <option value="CHF">CHF - Franco Suíço</option>
+                        <option value="CNY">CNY - Yuan</option>
+                        <option value="ARS">ARS - Peso Argentino</option>
+                    </select>
+
+                </div>
+
+            </div>
+
+            <!-- -->
+            <div class="currency-row">
+
+                <div class="currency-input">
+                    <label for="convertedAmount">Resultado</label>
+                    <input type="text" readonly id="convertedAmount" placeholder="Valor convertido">
+                </div>
+
+                <div class="currency-select">
+                    <label for="toCurrency">Para</label>
+                    <select name="" id="toCurrency" required>
+                        <option value="USD" selected>USD - Dólar</option>
+                        <option value="EUR">EUR - Euro</option>
+                        <option value="BRL">BRL - Real</option>
+                        <option value="GBP">GBP - Libra</option>
+                        <option value="AOA">AOA - Kwanza</option>
+                        <option value="JPY">JPY - Iene</option>
+                        <option value="CAD">CAD - Dólar Canadense</option>
+                        <option value="AUD">AUD - Dólar Australiano</option>
+                        <option value="CHF">CHF - Franco Suíço</option>
+                        <option value="CNY">CNY - Yuan</option>
+                        <option value="ARS">ARS - Peso Argentino</option>
+                    </select>
+
+                </div>
+
+            </div>
+
+            <button type="submit" class="converter-btn" id="converterBtn">
+                Converter Moeda
+            </button>
+
+        </form>
+
+        <div class="loading">
+            <div class="spinner"></div>
+            <p>Buscando Cotação...</p>
+        </div>
+
+        <div class="result"></div>
+        <div class="error"> </div>
+
+
+        <div class="info">
+            <p>Taxas actualizadas em tempo real</p>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+
+
+
+
+   
+</body>
+
+</html>
